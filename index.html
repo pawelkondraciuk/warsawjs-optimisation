@@ -20,7 +20,7 @@
 </head>
 <body class="shower list">
     <header class="caption">
-        <h1>Workout plan: how to lose kilobytes</h1>
+        <h1>Workout plan to lose kilobytes</h1>
         <p>We talk about JavaScript. Each month in Warsaw, Poland.</p>
     </header>
 
@@ -50,50 +50,83 @@
     <section class="slide">
         <h2>Who Am I</h2>
         <ul>
-            <li class="next">JavaScript Developer</li>
+            <li class="next">JavaScript Developer (no more CSS!)</li>
             <li class="next">Working at <img src="pictures/instapage.png" class="instapage"/></li>
             <li class="next">From Białystok</li>
         </ul>
-        <img src="pictures/bialystok.jpg" class="next"/>
+        <img src="pictures/bialystok.jpg" class="next bialystok"/>
         <style>
             .instapage {
+                height: 40px;
+                vertical-align: middle;
+                margin-top: -50px;
+                margin-left: 50px;
+            }
+            .bialystok {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+            }
+        </style>
+    </section>
+
+    <section class="slide">
+        <h2>Who Am I</h2>
+        <ul>
+            <li>JavaScript Developer (ex Front-end)</li>
+            <li>Working at <img src="pictures/instapage.png" class="instapage-fix"/></li>
+            <li>From Białystok</li>
+        </ul>
+        <img src="pictures/bialystok.jpg"/>
+        <style>
+            .instapage-fix {
                 height: 40px;
                 vertical-align: middle;
             }
         </style>
     </section>
 
+
+    <section class="slide compact">
+		<video width="100%" preload>
+            <source src="videos/app.webm" type="video/webm">
+        </video>
+	</section>
+
     <section class="slide">
         <h2>Specs</h2>
-		<ul>
-			<li class="next">Angular 4.0.3
-				<ul>
-					<li>7 components</li>
-					<li>4 root paths, 2 child paths</li>
-				</ul>
-			</li>
-			<li class="next">Rxjs
-				<ul>
-					<li>Observable</li>
-				</ul>
-			</li>
-			<li class="next">Lodash
-				<ul>
-					<li>isArray</li>
-				</ul>
-			</li>
-		</ul>
+        <table>
+            <tr>
+                <th scope="col">Library</th>
+                <th>Version</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <th scope="row">@angular</th>
+                <td>4.1.3</td>
+                <td>core, compiler, router</td>
+            </tr>
+            <tr>
+                <th scope="row">Rxjs</th>
+                <td>5.0.3</td>
+                <td>Observable, timer, map</td>
+            </tr>
+            <tr>
+                <th scope="row">lodash</th>
+                <td>4.17.4</td>
+                <td>_.repeat</td>
+            </tr>
+            <tr>
+                <th scope="row">Webpack</th>
+                <td>2.6.1</td>
+                <td>Bundler</td>
+            </tr>
+        </table>
     </section>
 
     <section class="slide compact">
 		<video width="100%" preload>
             <source src="videos/no-opt.webm" type="video/webm">
-        </video>
-	</section>
-
-    <section class="slide compact">
-		<video width="100%" preload>
-            <source src="videos/app.webm" type="video/webm">
         </video>
 	</section>
 
@@ -146,19 +179,18 @@
 	<section class="slide">
 		<h2>Download time for 100KB</h2>
 		<div class="ct-chart ct-chart-bar ct-chart-load-time"></div>
-		<style>
-			p.reduced-speed {
-				font-size: 20px;
-			}
-		</style>
 	</section>
 
     <section class="slide middle with-img">
 		<div class="middle">
 			<p>App bundle</p>
-			4MB => 10min @ 3G
+			3.9MB => 10min @ 3G
 		</div>
 		<img src="pictures/imout.gif" />
+	</section>
+
+    <section class="slide">
+		<img src="pictures/thinking.gif" class="full-height" />
 	</section>
 
     <section class="slide">
@@ -172,17 +204,19 @@
 		</ul>
 	</section>
 
-	<section class="slide compact">
+	<section class="slide prism">
 		<h2>Minification - Webpack + UglifyJsPlugin</h2>
-		<pre class="no-number">
-			<code>new UglifyJsPlugin({</code>
-			<code>  beautify: false,</code>
-            <code>  output: { comments: false },</code>
-            <code>  compress: {</code>
-            <code>    unused: true,</code>
-            <code>    dead_code: true</code>
-            <code>  }</code>
-            <code>})</code>
+		<pre class="language-javascript">
+            <code>
+                new UglifyJsPlugin({
+                    beautify: false,
+                    output: { comments: false },
+                    compress: {
+                        unused: true,
+                        dead_code: true
+                    }
+                })
+            </code>
 		</pre>
 	</section>
 
@@ -195,9 +229,47 @@
     <section class="slide middle with-img">
 		<div class="middle">
 			<p>App bundle + UglifyJs</p>
-			1.4MB => 3:41min @ 3G
+			1.3MB => 3:25min @ 3G
 		</div>
 		<img src="pictures/wat.gif" />
+	</section>
+
+    <section class="slide">
+		<h2>Closure*</h2>
+		<ul>
+			<li class="next">Aggressive obtimalisation</li>
+			<li class="next">Dead code eleminiation</li>
+			<li class="next">You need to think about Closure during coding</li>
+			<li class="next">Easy do make mistakes</li>
+		</ul>
+		<p class="note next">* UglifyJS is more than enough on a daily basis</p>
+	</section>
+
+	<section class="slide prism">
+		<pre class="language-javascript">
+            <code>
+                function square(x) { return x * x };
+                function cube(x) { return x * x * x};
+                let x = 5;
+                if (x % 2 === 0) {
+                    console.log(square(x)); 
+                } else {
+                    console.log(cube(x));
+                }
+            </code>
+		</pre>
+        <span class="next">
+            After optimisation
+            <pre class="language-javascript">
+                <code>
+                    console.log(125);
+                </code>
+            </pre>
+        </span>
+		<p class="next">
+            Don't believe?
+			<a class="next" href="https://closure-compiler.appspot.com/home">Try it yourself :)</a>
+		</p>
 	</section>
 
     <section class="slide">
@@ -244,7 +316,8 @@
 	</section>
 
     <section class="slide prism">
-        <pre style="font-size: 21px;" class="language-javascript line-numbers">
+        <h2>Webpack - what does it do?</h2>
+        <pre style="font-size: 21px;" class="language-javascript line-numbers next">
             <code>
                 // webpack.config.js
                 const path = require('path');
@@ -356,9 +429,9 @@
     <section class="slide">
         <h2>Bundle splitting</h2>
         <ul>
-            <li>Single and huge JS file</li>
-            <li>User must download complete bundle if app is changed</li>
-            <li><mark>CommonsChunkPlugin</mark> comes to the rescue</li>
+            <li class="next">Huge file splitted into smaller ones (eg. app, vendor, polyfills)</li>
+            <li class="next">User doesn't need to download everything when app changes</li>
+            <li class="next"><mark>CommonsChunkPlugin</mark> comes to the rescue</li>
         </ul>
     </section>
 
@@ -574,7 +647,7 @@
                     <polygon points="238.403,-113.01 244.148,-104.107 234.105,-107.484 238.403,-113.01"></polygon>
                 </g>
                 <!-- F -->
-                <g id="node15" class="node question">
+                <g id="node15" class="node">
                     <ellipse fill="none" cx="27" cy="-18" rx="27" ry="18"></ellipse>
                 </g>
                 <!-- G&#45;&gt;F -->
@@ -704,10 +777,10 @@
     <section class="slide">
         <h2>Tree shaking</h2>
 		<ul>
-			<li>Bundler removes <b>references</b> to dead code</li>
-			<li class="next">Minification removes dead code</li>
+			<li>Bundler removes <b>references</b> to unused exports</li>
+			<li class="next">Minifier removes dead code</li>
 			<li class="next">Webpack 2.x + ES6 (import/export)</li>
-			<li class="next">Babel</li>
+			<li class="next">Babel + es2015 preset</li>
 		</ul>
     </section>
 
@@ -766,20 +839,278 @@
 		</figure>
 	</section>
 
+    <section class="slide middle with-img">
+		<div class="middle">
+			<p>App bundle + UglifyJs + Tree Shaking</p>
+			1.1MB => 2:54min @ 3G
+		</div>
+		<img src="pictures/smile.gif"/>
+	</section>
+
     <section class="slide compact">
         <video width="100%" preload>
             <source src="videos/tree-shaking.webm" type="video/webm">
         </video>
 	</section>
 
+    <section class="slide">
+		<figure>
+			<img class="cover" src="pictures/performance.png" alt="Performance">
+		</figure>
+	</section>
+
+    <section class="slide">
+		<figure>
+			<img class="cover" src="pictures/compiler-map.png" alt="Compiler map">
+		</figure>
+	</section>
+
+    <section class="slide">
+        <h2>@angular/compiler</h2>
+        <ul>
+            <li>Transforms HTML into JavaScript optimized for VM</li>
+            <li>Creates scoped CSS based on the ViewEncapsulation</li>
+            <li>Generates metadata for third party libraries</li>
+            <li>Every time app is loaded (JIT)</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Ahead of Time compilation</h2>
+        <ul>
+            <li>Smaller application size (no @angular/compiler)</li>
+            <li>Faster rendering (templates already compiled)</li>
+            <li>Detect template errors earlier (at build time)</li>
+            <li>Better security (no evals)</li>
+            <li>Even smaller bundle size with tree shaking!</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>@angular/compiler</h2>
+        <ul>
+            <li>HTML can be compiled to TypeScript</li>
+            <li>...so your JS code in HTML needs to be valid</li>
+            <li>...and it have to be <a href="https://medium.com/@isaacplmann/making-your-angular-2-library-statically-analyzable-for-aot-e1c6f3ebedd5">statically analyzable</a>.</li>
+        </ul>
+    </section>
+
+    <section class="slide prism">
+        <pre class="language-html">
+            <code>
+                &lt;h1&gt;Hello World!&lt;/h1&gt;
+            </code>
+        </pre>
+        <pre style="font-size: 21px;" class="language-javascript next">
+            <code>
+                // Compiles into
+                ...
+                const parentRenderNode:any = this.renderer.createViewRoot(this.parentElement);
+                this._el_0 = import3.createRenderElement(this.renderer,parentRenderNode,'h1',import3.EMPTY_INLINE_ARRAY,(null as any));
+                this._text_1 = this.renderer.createText(this._el_0,'Hello World!',(null as any));
+                this._text_2 = this.renderer.createText(parentRenderNode,'\n',(null as any));
+                ...
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>@ngtools/webpack</h2>
+        <ul>
+            <li>replaces awesome-typescript-loader + ng-router-loader + angular2-template-loader</li>
+            <li>and adds AoT compilation</li>
+            <li>can be used with scss, less, pug</li>
+            <li>part of the Angular CLI</li>
+        </ul>
+    </section>
+
+    <section class="slide prism">
+        <h2>@ngtools/webpack</h2>
+            <pre style="font-size: 25px;" class="language-javascript">
+                <code>
+                    let AotPlugin = require('@ngtools/webpack').AotPlugin;
+
+                    module.exports = {
+                        rules: [{ test: /\.ts/, use: '@ngtools/webpack' }]
+                        plugins: [
+                            new AotPlugin({
+                                tsConfigPath: path.resolve('tsconfig.json'),
+                                entryModule: path.resolve('app.module#AppModule')
+                            })
+                        ]
+                    }
+                </code>
+            </pre>
+    </section>
+
+    <section class="slide">
+		<figure>
+			<img class="cover" src="pictures/aot-performance.png" alt="AoT performance">
+		</figure>
+	</section>
+
+    <section class="slide">
+		<figure>
+			<img class="cover" src="pictures/aot-map.png" alt="Aot source map">
+		</figure>
+	</section>
+
+    <section class="slide compact">
+		<video width="100%" preload>
+            <source src="videos/aot.webm" type="video/webm">
+        </video>
+	</section>
+
     <section class="slide middle with-img">
 		<div class="middle">
-			<p>App bundle + UglifyJs + Tree Shaking</p>
-			1.3MB => 3:25min @ 3G
+			<p>Angular + UglifyJs + Tree Shaking + AoT</p>
+			427KB => 1:05min @ 3G
 		</div>
-		<img src="pictures/smile.gif"/>
+		<img src="pictures/thumbup.gif" />
 	</section>
-    
+
+    <section class="slide">
+        <h2>Lazy loading</h2>
+        <ul>
+			<li class="next">Who needs all modules at once?</li>
+            <li class="next">Only required code is delivered in app.js</li>
+            <li class="next">Rest is splitted into chunks and fetched on demand</li>
+			<li class="next">Fast time to interact</li>
+		</ul>
+    </section>
+
+    <section class="slide prism">
+		<h2>Lazy loading</h2>
+		<pre class="language-javascript">
+            <code>
+                const routes: Routes = [
+                    { path: '', component: Component },
+                    {
+                        path: 'lazy',
+                        loadChildren: './+lazy/lazy.module#LazyModule'
+                    }
+                ];
+            </code>
+		</pre>
+	</section>
+
+    <section class="slide compact">
+		<video width="100%" preload>
+            <source src="videos/lazy-load-1.webm" type="video/webm">
+        </video>
+	</section>
+
+    <section class="slide compact">
+		<video width="100%" preload>
+            <source src="videos/lazy-load-2.webm" type="video/webm">
+        </video>
+	</section>
+
+    <section class="slide prism">
+        <h2>Lazy loading - preloading strategy</h2>
+        <pre class="language-javascript">
+            <code>
+                import {
+                    RouterModule, PreloadAllModules
+                } from '@angular/router';
+                ...
+                imports: [
+                    RouterModule.forRoot(routes, {
+                        preloadingStrategy: PreloadAllModules 
+                    })
+                ],
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide compact">
+		<video width="100%" preload>
+            <source src="videos/lazy-load-preload.webm" type="video/webm">
+        </video>
+	</section>
+
+	<section class="slide">
+		<h2>GZip compression</h2>
+		<ul>
+			<li class="next">Response size reduced about ~80% (most data is repetable text)</li>
+		</ul>
+		<pre class="next">
+			<code><mark class="important">.selector</mark> { /* ... */ }</code>
+			<code><mark class="important">.selector</mark> .child-selector { /* ... */ }</code>
+		</pre>
+		<table class="next">
+			<tr>
+				<td scope="row">bootstrap.min.css</td>
+				<td>118KB</td>
+			</tr>
+			<tr>
+				<td scope="row">bootstrap.min.css.gz</td>
+				<td>19KB</td>
+			</tr>
+			<tr>
+				<th scope="row">Difference</th>
+				<td><mark>83,9%</mark></td>
+			</tr>
+		</table>
+	</section>
+
+    <section class="slide prism">
+		<h2>compression-webpack-plugin</h2>
+		<pre class="language-javascript">
+            <code>
+                new CompressionPlugin({
+                    regExp: /\.css$|\.html$|\.js$$/,
+                    threshold: 2 * 1024
+                })
+            </code>
+		</pre>
+		<pre class="language-clike next">
+            <code>
+                AddOutputFilterByType DEFLATE text/javascript
+                AddOutputFilterByType DEFLATE text/css
+                AddOutputFilterByType DEFLATE text/html
+            </code>
+		</pre>
+	</section>
+
+    <section class="slide compact">
+		<video width="100%" preload>
+            <source src="videos/gzip.webm" type="video/webm">
+        </video>
+	</section>
+
+	<section class="slide middle with-img">
+		<div class="middle">
+			<p>Angular + UglifyJs + Tree Shaking + AoT + GZip</p>
+			134KB => 0:20sec @ 3G
+		</div>
+		<img src="pictures/party.gif" />
+	</section>
+
+    <section class="slide">
+        <h2>Resources</h2>
+        <ul>
+            <li><a href="https://github.com/pawelkondraciuk/warsawjs-optimisation-demo">Demo application</a></li>
+            <li><a href="https://blog.mgechev.com/2016/08/14/ahead-of-time-compilation-angular-offline-precompilation/">AoT</a></li>
+            <li><a href="https://www.youtube.com/watch?v=kW9cJsvcsGo">The Angular 2 Compiler</a></li>
+            <li><a href="https://medium.com/@isaacplmann/making-your-angular-2-library-statically-analyzable-for-aot-e1c6f3ebedd5">Making your code statically analyzable</a></li>
+            <li><a href="https://blog.craftlab.hu/multiple-solutions-for-angular-ahead-of-time-aot-compilation-c474d9a0d508">More about AoT</a></li>
+            <li><a href="https://github.com/webpack/webpack/tree/master/examples/harmony-unused">Harmony Unused</a></li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h3 class="shout">Questions?</h3>
+        <p class="contact-note"><a href="http://twitter.com/pawelkondraciuk">@pawelkondraciuk</a></p>
+        <style>
+            p.contact-note {
+                position: absolute;
+                bottom: 40px;
+                right: 100px;
+            }
+        </style>
+    </section>
+
     <section class="slide">
         <h3 class="shout">See you next month at WarsawJS</h3>
     </section>
@@ -799,6 +1130,7 @@
     <script src="vendors/shower-gamepad/shower.gamepad.js"></script>
     <script src="vendors/shower-video/shower-video.js"></script>
     <script src="vendors/chartist/chartist.min.js"></script>
+    <script src="modules/analytics.js"></script>
     <script src="modules/fullscreen.js"></script>
     <script src="modules/legend.js"></script>
 	<script src="modules/createRect.js"></script>

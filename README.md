@@ -1,4 +1,4 @@
-# WarsawJS Slides: Template
+# Workout plan to lose kilobytes
 
 ![Logo](/pictures/logo/warsawjs-logo-light.png)
 
