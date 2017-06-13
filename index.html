@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>WarsawJS Slides: Template</title>
+    
 
     <meta charset="utf-8"/>
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -10,14 +10,17 @@
     <!-- Shower Theme -->
     <link rel="stylesheet" href="vendors/shower-ribbon/styles/screen-16x10.css"/>
     <link rel="stylesheet" href="vendors/shower-warsawjs/styles/main.css"/>
+    <link rel="stylesheet" href="vendors/shower-video/shower-video.css"/>
+    <link rel="stylesheet" href="vendors/chartist/chartist.min.css">
 
     <!-- Prism.js -->
     <link rel="stylesheet" href="vendors/prism/prism.css"/>
     <link rel="stylesheet" href="modules/custom-prism.css"/>
+    <link rel="stylesheet" href="modules/styles.css"/>
 </head>
 <body class="shower list">
     <header class="caption">
-        <h1>WarsawJS Slides: Template</h1>
+        <h1>Workout plan: how to lose kilobytes</h1>
         <p>We talk about JavaScript. Each month in Warsaw, Poland.</p>
     </header>
 
@@ -31,291 +34,752 @@
             <img src="pictures/my-avatar.jpg" alt="Speaker"/>
 
             <!-- 2. Speaker -->
-            <h2>Speaker name</h2>
+            <h2>Paweł Kondraciuk</h2>
 
             <!-- 3. Presentation title -->
-            <h2><strong>"WarsawJS Slides: Template" [PL/EN]</strong></h2>
+            <h2><strong>Workout plan to lose kilobytes</strong></h2>
 
             <!-- 4. Presentation date -->
-            <h2>XXXX-XX-XX</h2>
+            <h2>2017-06-14</h2>
 
             <!-- 5. Contact the speaker -->
-            <h2><a href="http://twitter.com/speaker">@speaker</a></h2>
+            <h2><a href="http://twitter.com/pawelkondraciuk">@pawelkondraciuk</a></h2>
         </div>
     </section>
 
-    <section class="slide compact">
-        <h2>TODO: Please update slides:</h2>
+    <section class="slide">
+        <h2>Who Am I</h2>
         <ul>
-            <li>rename project at <mark>GitHub</mark> with snake-case convention</li>
-            <li><mark>description</mark> and <mark>link</mark> on GitHub repository profile</li>
-            <li>link to <mark>"Fork me on GitHub"</mark> on the bottom of document</li>
-            <li>setup presentation title in
-                <ul>
-                    <li><mark>&lt;title&gt;</mark> tag on the top of document in <mark>&lt;head&gt;</mark> tag</li>
-                    <li><mark>README.md</mark> file</li>
-                    <li><mark>&lt;h1&gt;</mark> tag at <mark>&lt;header&gt;</mark> tag on the top of document</li>
-                </ul>
-            </li>
+            <li class="next">JavaScript Developer</li>
+            <li class="next">Working at <img src="pictures/instapage.png" class="instapage"/></li>
+            <li class="next">From Białystok</li>
+        </ul>
+        <img src="pictures/bialystok.jpg" class="next"/>
+        <style>
+            .instapage {
+                height: 40px;
+                vertical-align: middle;
+            }
+        </style>
+    </section>
+
+    <section class="slide">
+        <h2>Specs</h2>
+		<ul>
+			<li class="next">Angular 4.0.3
+				<ul>
+					<li>7 components</li>
+					<li>4 root paths, 2 child paths</li>
+				</ul>
+			</li>
+			<li class="next">Rxjs
+				<ul>
+					<li>Observable</li>
+				</ul>
+			</li>
+			<li class="next">Lodash
+				<ul>
+					<li>isArray</li>
+				</ul>
+			</li>
+		</ul>
+    </section>
+
+    <section class="slide compact">
+		<video width="100%" preload>
+            <source src="videos/no-opt.webm" type="video/webm">
+        </video>
+	</section>
+
+    <section class="slide compact">
+		<video width="100%" preload>
+            <source src="videos/app.webm" type="video/webm">
+        </video>
+	</section>
+
+	<section class="slide">
+		<img src="pictures/fat-cat.gif" class="full-height" />
+	</section>
+
+    <section class="slide">
+		<h2>Statistics</h2>
+		<ul>
+			<li class="next">47% of customers expect a cat to go through in less than 2 secs</li>
+			<li class="next">40% of customers will leave if it lasts more than 3 seconds</li>
+			<li class="next">70% of mobile users say that they saw cat that was too slow to move</li>
+			<li class="next">51% of mobile users say that they saw cat that stucked</li>
+		</ul>
+		<p class="note next">source: Akamai 10For10, KissMetrics</p>
+	</section>
+
+    <section class="slide">
+		<h2>Every Second Counts</h2>
+		<ul>
+			<li class="next">11% less views</li>
+			<li class="next">16% decrease in customer satisfaction</li>
+			<li class="next">7% reduction in conversions</li>
+			<li class="next">Losing money $$</li>
+		</ul>
+		<p class="note next">source: Amazon, Walmart, KissMetrics</p>
+	</section>
+
+	<section class="slide">
+		<h2>That's not all!</h2>
+		<ul>
+			<li class="next"><a href="https://productforums.google.com/forum/#!topic/webmasters/x-tAmtvK9iA/discussion" target="_blank">Negative ranking factor</a></li>
+			<li class="next">Growing users frustration</li>
+			<li class="next">Lower trust in the product</li>
+		</ul>
+	</section>
+
+    <section class="slide compact">
+		<h2>Mobile vs Tablet vs Desktop</h2>
+		<div class="ct-chart ct-chart-line ct-chart-usage"></div>
+		<p class="note">source: <a href="http://gs.statcounter.com/platform-market-share/desktop-mobile-tablet#monthly-200901-201705" target="_blank">StatCounter (2.5mln stron)</a></p>
+		<style>
+			.ct-chart {
+				height: 65%;
+			}
+		</style>
+	</section>
+
+	<section class="slide">
+		<h2>Download time for 100KB</h2>
+		<div class="ct-chart ct-chart-bar ct-chart-load-time"></div>
+		<style>
+			p.reduced-speed {
+				font-size: 20px;
+			}
+		</style>
+	</section>
+
+    <section class="slide middle with-img">
+		<div class="middle">
+			<p>App bundle</p>
+			4MB => 10min @ 3G
+		</div>
+		<img src="pictures/imout.gif" />
+	</section>
+
+    <section class="slide">
+		<h2>Minification, obfuscation and optimisation</h2>
+		<ul>
+			<li class="next">Mangle variables</li>
+			<li class="next">Remove comments</li>
+			<li class="next"><b>Drop dead code</b></li>
+			<li class="next">Optimise loops</li>
+			<li class="next">Various optimizations for boolean context</li>
+		</ul>
+	</section>
+
+	<section class="slide compact">
+		<h2>Minification - Webpack + UglifyJsPlugin</h2>
+		<pre class="no-number">
+			<code>new UglifyJsPlugin({</code>
+			<code>  beautify: false,</code>
+            <code>  output: { comments: false },</code>
+            <code>  compress: {</code>
+            <code>    unused: true,</code>
+            <code>    dead_code: true</code>
+            <code>  }</code>
+            <code>})</code>
+		</pre>
+	</section>
+
+    <section class="slide compact">
+		<video width="100%" preload>
+            <source src="videos/minification.webm" type="video/webm">
+        </video>
+	</section>
+
+    <section class="slide middle with-img">
+		<div class="middle">
+			<p>App bundle + UglifyJs</p>
+			1.4MB => 3:41min @ 3G
+		</div>
+		<img src="pictures/wat.gif" />
+	</section>
+
+    <section class="slide">
+        <h2>Deeper application analysation</h2>
+		<img src="pictures/inside.gif" class="full-height with-title" />
+	</section>
+
+    <section class="slide">
+		<h2>Deeper application analysation</h2>
+		<ul>
+			<li><a href="http://webpack.github.io/analyse" target="_blank">http://webpack.github.io/analyse</a>
+				<ul>
+					<li class="next">webpack --profile --json > stats.json</li>
+					<li class="next">Dependency graph</li>
+					<li class="next">Detailed statistics</li>
+				</ul>
+			</li>
+		</ul>
+	</section>
+
+    <section class="slide">
+		<figure>
+			<img class="cover" src="pictures/analyse-graph.png" alt="Graph analyse">
+		</figure>
+	</section>
+
+    <section class="slide">
+		<h2>Deep application analysation</h2>
+		<ul>
+			<li><a href="http://webpack.github.io/analyse" target="_blank">http://webpack.github.io/analyse</a>
+				<ul>
+					<li>webpack --profile --json > stats.json</li>
+					<li>Dependency graph</li>
+					<li>Detailed statistics</li>
+				</ul>
+			</li>
+			<li class="next">source-map-explorer
+				<ul>
+					<li class="next">npm install source-map-explorer</li>
+					<li class="next">source-map-explorer main.bundle.js main.bundle.js.map</li>
+				</ul>
+			</li>
+		</ul>
+	</section>
+
+    <section class="slide prism">
+        <pre style="font-size: 21px;" class="language-javascript line-numbers">
+            <code>
+                // webpack.config.js
+                const path = require('path');
+
+                module.exports =  = {
+                    entry: './src/main.ts',
+                    output: {
+                        path: path.resolve(__dirname, 'dist'),
+                        filename: 'app.js'
+                    }
+                };
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <svg width="100%" height="400px" viewBox="0.00 0.00 350.00 188.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <g id="graph1" class="graph" transform="scale(1 1) rotate(0) translate(4 184)">
+                <!-- A -->
+                <g id="node1" class="node">
+                    <ellipse fill="none" cx="171" cy="-162" rx="27" ry="18"></ellipse>
+                    <text text-anchor="middle" x="171" y="-157.8">app.js</text>
+                </g>
+                <!-- B -->
+                <g id="node3" class="node">
+                    <ellipse fill="none" cx="99" cy="-90" rx="27" ry="18"></ellipse>
+                </g>
+                <!-- A&#45;&gt;B -->
+                <g id="edge2" class="edge">
+                    <path fill="none" d="M156.43,-146.834C146.25,-136.938 132.476,-123.546 120.969,-112.359"></path>
+                    <polygon points="123.405,-109.846 113.796,-105.385 118.526,-114.865 123.405,-109.846"></polygon>
+                </g>
+                <!-- X -->
+                <g id="node5" class="node">
+                    <ellipse fill="none" cx="171" cy="-90" rx="27" ry="18"></ellipse>
+                </g>
+                <!-- A&#45;&gt;X -->
+                <g id="edge4" class="edge">
+                    <path fill="none" d="M171,-143.697C171,-135.983 171,-126.712 171,-118.112"></path>
+                    <polygon points="174.5,-118.104 171,-108.104 167.5,-118.104 174.5,-118.104"></polygon>
+                </g>
+                <!-- C -->
+                <g id="node7" class="node vendor">
+                    <ellipse fill="none" cx="243" cy="-90" rx="27" ry="18"></ellipse>
+                    <text text-anchor="middle" x="243" y="-85.8">A</text>
+                </g>
+                <!-- A&#45;&gt;C -->
+                <g id="edge6" class="edge">
+                    <path fill="none" d="M185.57,-146.834C195.75,-136.938 209.524,-123.546 221.031,-112.359"></path>
+                    <polygon points="223.474,-114.865 228.204,-105.385 218.595,-109.846 223.474,-114.865"></polygon>
+                </g>
+                <!-- F -->
+                <g id="node15" class="node">
+                    <ellipse fill="none" cx="27" cy="-18" rx="27" ry="18"></ellipse>
+                </g>
+                <!-- B&#45;&gt;F -->
+                <g id="edge14" class="edge">
+                    <path fill="none" d="M84.4297,-74.8345C74.2501,-64.9376 60.4761,-51.5462 48.9694,-40.3591"></path>
+                    <polygon points="51.4055,-37.8461 41.7957,-33.3847 46.5259,-42.865 51.4055,-37.8461"></polygon>
+                </g>
+                <!-- G -->
+                <g id="node17" class="node">
+                    <ellipse fill="none" cx="99" cy="-18" rx="27" ry="18"></ellipse>
+                </g>
+                <!-- B&#45;&gt;G -->
+                <g id="edge16" class="edge">
+                    <path fill="none" d="M99,-71.6966C99,-63.9827 99,-54.7125 99,-46.1124"></path>
+                    <polygon points="102.5,-46.1043 99,-36.1043 95.5001,-46.1044 102.5,-46.1043"></polygon>
+                </g>
+                <!-- Y -->
+                <g id="node13" class="node">
+                    <ellipse fill="none" cx="171" cy="-18" rx="27" ry="18"></ellipse>
+                </g>
+                <!-- X&#45;&gt;Y -->
+                <g id="edge12" class="edge">
+                    <path fill="none" d="M171,-71.6966C171,-63.9827 171,-54.7125 171,-46.1124"></path>
+                    <polygon points="174.5,-46.1043 171,-36.1043 167.5,-46.1044 174.5,-46.1043"></polygon>
+                </g>
+                <!-- D -->
+                <g id="node9" class="node vendor">
+                    <ellipse fill="none" cx="243" cy="-18" rx="27" ry="18"></ellipse>
+                    <text text-anchor="middle" x="243" y="-13.8">B</text>
+                </g>
+                <!-- C&#45;&gt;D -->
+                <g id="edge8" class="edge">
+                    <path fill="none" d="M243,-71.6966C243,-63.9827 243,-54.7125 243,-46.1124"></path>
+                    <polygon points="246.5,-46.1043 243,-36.1043 239.5,-46.1044 246.5,-46.1043"></polygon>
+                </g>
+                <!-- E -->
+                <g id="node11" class="node vendor">
+                    <ellipse fill="none" cx="315" cy="-18" rx="27" ry="18"></ellipse>
+                    <text text-anchor="middle" x="315" y="-13.8">C</text>
+                </g>
+                <!-- C&#45;&gt;E -->
+                <g id="edge10" class="edge">
+                    <path fill="none" d="M257.57,-74.8345C267.75,-64.9376 281.524,-51.5462 293.031,-40.3591"></path>
+                    <polygon points="295.474,-42.865 300.204,-33.3847 290.595,-37.8461 295.474,-42.865"></polygon>
+                </g>
+            </g>
+        </svg>
+    </section>
+
+    <section class="slide">
+		<figure>
+			<img class="cover" src="pictures/no-splitting-map.png" alt="No optimisation">
+		</figure>
+	</section>
+
+    <section class="slide">
+        <h2>Bundle splitting</h2>
+        <ul>
+            <li>Single and huge JS file</li>
+            <li>User must download complete bundle if app is changed</li>
+            <li><mark>CommonsChunkPlugin</mark> comes to the rescue</li>
         </ul>
     </section>
 
-    <section class="slide compact">
-        <h2>List Navigation</h2>
-        <ol>
-            <li>Ennui keffiyeh thundercats</li>
-            <li class="next">Jean shorts biodiesel</li>
-            <li class="next">Terry richardson, swag blog</li>
-            <li class="next">Locavore umami vegan helvetica</li>
-            <li class="next">Fingerstache kale chips</li>
-        </ol>
-        <p class="next">Before they sold out master</p>
-    </section>
-
-    <section class="slide compact">
-        <h2>Slide Header</h2>
-
-        <p>Echo Park 8-bit sustainable umami deep v Kickstarter. DIY cliche typewriter brunch, Odd Future sriracha pickled aesthetic. Farm-to-table bespoke fingerstache, kale chips umami brunch letterpress.</p>
-        <p>Whatever authentic disrupt, you probably haven't heard of them direct trade mlkshk Etsy. Gluten-free roof party plaid four loko quinoa.</p>
-        <p class="note">Echo Park 8-bit sustainable umami deep v Kickstarter.</p>
-    </section>
-
-    <section class="slide compact">
-        <h2>Inline Elements</h2>
-
-        <p>Retro meh brunch <a href="">aesthetic</a> Cosby sweater Shoreditch. Banksy Tumblr
-            <strong>sriracha</strong>, flexitarian pug chia master cleanse vinyl
-            <em>wayfarers</em> fanny pack bespoke Helvetica <b>roof</b> party. Messenger bag retro cred
-            <i>Portland</i> next level. Yr stumptown Schlitz Carles deep v small batch. Hella sustainable messenger bag,
-            <mark>leggings</mark>
-            skateboard literally<sup>1</sup> bicycle rights H<sub>2</sub>0 mumblecore banh mi DIY VHS. Semiotics four loko street art asymmetrical. Asymmetrical
-            <code>&lt;paleo&gt;</code> you probably haven’t heard of.
-        </p>
-
-        <footer class="footer">
-            <p>Retro meh brunch <a href="">aesthetic</a> Cosby sweater Shoreditch. Banksy Tumblr
-                <strong>sriracha</strong>, flexitarian pug chia master cleanse vinyl
-                <em>wayfarers</em> fanny pack bespoke Helvetica <b>roof</b> party. Messenger bag retro cred
-                <i>Portland</i> next level. Yr stumptown Schlitz Carles deep v small batch. Hella sustainable messenger bag,
-                <mark>leggings</mark>
-                skateboard literally<sup>1</sup> bicycle rights H<sub>2</sub>0 mumblecore banh mi DIY VHS. Semiotics four loko street art asymmetrical. Asymmetrical
-                <code>&lt;paleo&gt;</code> you probably haven’t heard of.
-            </p>
-        </footer>
-    </section>
-
-    <section class="slide compact">
-        <h2>Columns</h2>
-        <p class="double">Echo Park 8-bit sustainable umami deep v Kickstarter. DIY cliche typewriter brunch, Odd Future sriracha pickled aesthetic. Farm-to-table bespoke fingerstache, kale chips umami brunch American Apparel letterpress. Whatever authentic disrupt, you probably haven't heard of them direct trade mlkshk Etsy. Gluten-free roof party plaid American Apparel four loko quinoa. Echo Park 8-bit sustainable.</p>
-    </section>
-
-    <section class="slide">
-        <h2>Quotes</h2>
-        <blockquote>
-            <p>Flannel bicycle rights locavore selfies skateboard. Authentic fanny pack paleo four loko bespoke. Artisan tattooed chia XOXO ennui, lomo disrupt 8-bit art party Tumblr scenester.</p>
-        </blockquote>
-        <figure>
-            <blockquote>
-                <p>Post-ironic fashion axe flexitarian, Tonx narwhal messenger bag Tumblr. Portland gentrify deep v kale chips literally.</p>
-            </blockquote>
-            <figcaption>Yours Truly</figcaption>
-        </figure>
-    </section>
-
-    <section class="slide compact">
-        <h2>Nested Lists</h2>
-        <ol>
-            <li>Literally viral vegan, ugh drinking vinegar photo booth</li>
-            <li>Wes Anderson chillwave Marfa pour-over Etsy banh mi</li>
-            <li>Ethnic polaroid lo-fi iPhone ennui
-                <ul>
-                    <li>Yr wayfarers before they sold out Kickstarter asymmetrical</li>
-                    <li>Irony flexitarian readymade quinoa, kogi bespoke meggings narwhal</li>
-                    <li>Skateboard Etsy twee artisan Echo Park</li>
-                </ul>
-            </li>
-            <li>Tonx kitsch fingerstache readymade, retro single-origin coffee</li>
-        </ol>
-    </section>
-
-    <section class="slide compact">
-        <h2>Simple Table</h2>
-        <table>
-            <tr>
-                <th scope="col">Gentrify</th>
-                <th>Twee</th>
-                <th>Artisan</th>
-                <th>Banksy</th>
-            </tr>
-            <tr>
-                <th scope="row">Messenger</th>
-                <td>Mixtape</td>
-                <td>Small batch</td>
-                <td>Bicycle rights</td>
-            </tr>
-            <tr>
-                <th scope="row">Meggings</th>
-                <td>Freegan</td>
-                <td>Retro biodiesel</td>
-                <td>Slow-carb</td>
-            </tr>
-            <tr>
-                <th scope="row">Vegan</th>
-                <td>Occupy</td>
-                <td>Normcore</td>
-                <td>Put a bird on it</td>
-            </tr>
-            <tr>
-                <th scope="row">Next level</th>
-                <td>Selfies</td>
-                <td>Sustainable</td>
-                <td>Organic</td>
-            </tr>
-            <tr>
-                <th scope="row">Umami</th>
-                <td>Asymmetrical</td>
-                <td>Keytar</td>
-                <td>Craft beer</td>
-            </tr>
-            <tr>
-                <th scope="row">Biodiesel</th>
-                <td>Haven’t heard</td>
-                <td>Skateboard</td>
-                <td>Farm-to-table</td>
-            </tr>
-        </table>
-    </section>
-
-    <section class="slide compact">
-        <h2>Striped Table</h2>
-        <table class="striped">
-            <tr>
-                <th scope="col">Gentrify</th>
-                <th>Twee</th>
-                <th>Artisan</th>
-                <th>Banksy</th>
-            </tr>
-            <tr>
-                <th scope="row">Messenger</th>
-                <td>Mixtape</td>
-                <td>Small batch</td>
-                <td>Bicycle rights</td>
-            </tr>
-            <tr>
-                <th scope="row">Meggings</th>
-                <td>Freegan</td>
-                <td>Retro biodiesel</td>
-                <td>Slow-carb</td>
-            </tr>
-            <tr>
-                <th scope="row">Vegan</th>
-                <td>Occupy</td>
-                <td>Normcore</td>
-                <td>Put a bird on it</td>
-            </tr>
-            <tr>
-                <th scope="row">Next level</th>
-                <td>Selfies</td>
-                <td>Sustainable</td>
-                <td>Organic</td>
-            </tr>
-            <tr>
-                <th scope="row">Umami</th>
-                <td>Asymmetrical</td>
-                <td>Keytar</td>
-                <td>Craft beer</td>
-            </tr>
-            <tr>
-                <th scope="row">Biodiesel</th>
-                <td>Haven’t heard</td>
-                <td>Skateboard</td>
-                <td>Farm-to-table</td>
-            </tr>
-        </table>
-    </section>
-
     <section class="slide prism">
-        <h2>Listing Slide</h2>
-
-        <pre style="font-size: 45px;" class="language-javascript line-numbers">
+        <pre style="font-size: 21px;" class="language-javascript line-numbers">
             <code>
-                function wrap(value) {
-                    return function () {
-                        return value;
+                module.exports = {
+                    entry: {
+                        app: './src/main.ts',
+                        <mark>vendor: './src/vendor.ts'</mark>
+                    },
+                    plugins: {
+                        new webpack.optimize.CommonsChunkPlugin({
+                            name: ['app', 'vendor']
+                        }),
                     }
-                }
+                };
+            </code>
+        </pre>
+    </section>
 
-                function bind(monad, f) {
-                    return f(monad());
+    <section class="slide">
+        <svg width="100%" height="350px" viewBox="0.00 0.00 494.00 188.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <g id="graph1" class="graph" transform="scale(1 1) rotate(0) translate(4 184)">
+
+                <!-- A -->
+                <g id="node1" class="node">
+                    <ellipse fill="none" cx="171" cy="-162" rx="27" ry="18"></ellipse>
+                    <text text-anchor="middle" x="171" y="-157.8">app.js</text>
+                </g>
+                <!-- G -->
+                <g id="node3" class="node">
+                    <ellipse fill="none" cx="99" cy="-90" rx="27" ry="18"></ellipse>
+                </g>
+                <!-- A&#45;&gt;G -->
+                <g id="edge2" class="edge">
+                    <path fill="none" d="M156.43,-146.834C146.25,-136.938 132.476,-123.546 120.969,-112.359"></path>
+                    <polygon points="123.405,-109.846 113.796,-105.385 118.526,-114.865 123.405,-109.846"></polygon>
+                </g>
+                <!-- X -->
+                <g id="node5" class="node">
+                    <ellipse fill="none" cx="171" cy="-90" rx="27" ry="18"></ellipse>
+                </g>
+                <!-- A&#45;&gt;X -->
+                <g id="edge4" class="edge">
+                    <path fill="none" d="M171,-143.697C171,-135.983 171,-126.712 171,-118.112"></path>
+                    <polygon points="174.5,-118.104 171,-108.104 167.5,-118.104 174.5,-118.104"></polygon>
+                </g>
+                <!-- B -->
+                <g id="node7" class="node vendor">
+                    <ellipse fill="none" cx="261" cy="-90" rx="27" ry="18"></ellipse>
+                    <text text-anchor="middle" x="261" y="-85.8">A</text>
+                </g>
+                <!-- A&#45;&gt;B -->
+                <g id="edge6" class="edge">
+                    <path fill="none" d="M187.928,-147.834C201.505,-137.274 220.757,-122.3 236.092,-110.373"></path>
+                    <polygon points="238.403,-113.01 244.148,-104.107 234.105,-107.484 238.403,-113.01"></polygon>
+                </g>
+                <!-- F -->
+                <g id="node15" class="node">
+                    <ellipse fill="none" cx="27" cy="-18" rx="27" ry="18"></ellipse>
+                </g>
+                <!-- G&#45;&gt;F -->
+                <g id="edge14" class="edge">
+                    <path fill="none" d="M84.4297,-74.8345C74.2501,-64.9376 60.4761,-51.5462 48.9694,-40.3591"></path>
+                    <polygon points="51.4055,-37.8461 41.7957,-33.3847 46.5259,-42.865 51.4055,-37.8461"></polygon>
+                </g>
+                <!-- K -->
+                <g id="node17" class="node">
+                    <ellipse fill="none" cx="99" cy="-18" rx="27" ry="18"></ellipse>
+                </g>
+                <!-- G&#45;&gt;K -->
+                <g id="edge16" class="edge">
+                    <path fill="none" d="M99,-71.6966C99,-63.9827 99,-54.7125 99,-46.1124"></path>
+                    <polygon points="102.5,-46.1043 99,-36.1043 95.5001,-46.1044 102.5,-46.1043"></polygon>
+                </g>
+                <!-- Y -->
+                <g id="node9" class="node">
+                    <ellipse fill="none" cx="171" cy="-18" rx="27" ry="18"></ellipse>
+                </g>
+                <!-- X&#45;&gt;Y -->
+                <g id="edge8" class="edge">
+                    <path fill="none" d="M171,-71.6966C171,-63.9827 171,-54.7125 171,-46.1124"></path>
+                    <polygon points="174.5,-46.1043 171,-36.1043 167.5,-46.1044 174.5,-46.1043"></polygon>
+                </g>
+                <!-- C -->
+                <g id="node11" class="node vendor">
+                    <ellipse fill="none" cx="243" cy="-18" rx="27" ry="18"></ellipse>
+                    <text text-anchor="middle" x="243" y="-13.8">B</text>
+                </g>
+                <!-- B&#45;&gt;C -->
+                <g id="edge10" class="edge">
+                    <path fill="none" d="M256.643,-72.055C254.609,-64.1446 252.139,-54.5398 249.863,-45.6879"></path>
+                    <polygon points="253.197,-44.6023 247.317,-35.789 246.418,-46.3456 253.197,-44.6023"></polygon>
+                </g>
+                <!-- D -->
+                <g id="node13" class="node vendor">
+                    <ellipse fill="none" cx="315" cy="-18" rx="27" ry="18"></ellipse>
+                    <text text-anchor="middle" x="315" y="-13.8">C</text>
+                </g>
+                <!-- B&#45;&gt;D -->
+                <g id="edge12" class="edge">
+                    <path fill="none" d="M272.984,-73.4647C279.976,-64.4021 288.936,-52.7865 296.785,-42.6119"></path>
+                    <polygon points="299.712,-44.5475 303.049,-34.4918 294.17,-40.2719 299.712,-44.5475"></polygon>
+                </g>
+                <!-- V -->
+                <g id="node18" class="node vendor">
+                    <ellipse fill="none" cx="279" cy="-162" rx="27" ry="18"></ellipse>
+                    <text text-anchor="middle" x="279" y="-157.8">vendor.js</text>
+                </g>
+                <!-- V&#45;&gt;B -->
+                <g id="edge18" class="edge">
+                    <path fill="none" d="M274.643,-144.055C272.609,-136.145 270.139,-126.54 267.863,-117.688"></path>
+                    <polygon points="271.197,-116.602 265.317,-107.789 264.418,-118.346 271.197,-116.602"></polygon>
+                </g>
+                <!-- 1 -->
+                <g id="node21" class="node vendor">
+                    <ellipse fill="none" cx="387" cy="-90" rx="27" ry="18"></ellipse>
+                </g>
+                <!-- V&#45;&gt;1 -->
+                <g id="edge20" class="edge">
+                    <path fill="none" d="M297.812,-148.807C315.002,-137.665 340.618,-121.062 359.993,-108.504"></path>
+                    <polygon points="361.916,-111.429 368.403,-103.053 358.108,-105.555 361.916,-111.429"></polygon>
+                </g>
+                <!-- 2 -->
+                <g id="node23" class="node vendor">
+                    <ellipse fill="none" cx="387" cy="-18" rx="27" ry="18"></ellipse>
+                </g>
+                <!-- 1&#45;&gt;2 -->
+                <g id="edge22" class="edge">
+                    <path fill="none" d="M387,-71.6966C387,-63.9827 387,-54.7125 387,-46.1124"></path>
+                    <polygon points="390.5,-46.1043 387,-36.1043 383.5,-46.1044 390.5,-46.1043"></polygon>
+                </g>
+                <!-- 3 -->
+                <g id="node25" class="node vendor">
+                    <ellipse fill="none" cx="459" cy="-18" rx="27" ry="18"></ellipse>
+                </g>
+                <!-- 1&#45;&gt;3 -->
+                <g id="edge24" class="edge">
+                    <path fill="none" d="M401.57,-74.8345C411.75,-64.9376 425.524,-51.5462 437.031,-40.3591"></path>
+                    <polygon points="439.474,-42.865 444.204,-33.3847 434.595,-37.8461 439.474,-42.865"></polygon>
+                </g>
+            </g>
+        </svg>
+    </section>
+
+    <section class="slide">
+		<figure>
+			<img class="cover" src="pictures/bundle-splitting-app-map.png" alt="No optimisation">
+		</figure>
+	</section>
+
+    <section class="slide">
+		<figure>
+			<img class="cover" src="pictures/bundle-splitting-vendor-map.png" alt="No optimisation">
+		</figure>
+	</section>
+
+    <section class="slide prism">
+        <pre style="font-size: 21px;" class="language-javascript line-numbers">
+            <code>
+                module.exports = {
+                    entry: {
+                        app: './src/main.ts'
+                    },
+                    plugins: {
+                        new webpack.optimize.CommonsChunkPlugin({
+                            name: 'vendor',
+                            chunks: ['app'],
+                            minChunks: module => /node_modules/.test(module.resource)
+                        }),
+                    }
+                };
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <svg width="100%" height="350px" viewBox="0.00 0.00 494.00 188.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <g id="graph1" class="graph" transform="scale(1 1) rotate(0) translate(4 184)">
+
+                <!-- A -->
+                <g id="node1" class="node">
+                    <ellipse fill="none" cx="171" cy="-162" rx="27" ry="18"></ellipse>
+                    <text text-anchor="middle" x="171" y="-157.8">app.js</text>
+                </g>
+                <!-- G -->
+                <g id="node3" class="node">
+                    <ellipse fill="none" cx="99" cy="-90" rx="27" ry="18"></ellipse>
+                </g>
+                <!-- A&#45;&gt;G -->
+                <g id="edge2" class="edge">
+                    <path fill="none" d="M156.43,-146.834C146.25,-136.938 132.476,-123.546 120.969,-112.359"></path>
+                    <polygon points="123.405,-109.846 113.796,-105.385 118.526,-114.865 123.405,-109.846"></polygon>
+                </g>
+                <!-- X -->
+                <g id="node5" class="node">
+                    <ellipse fill="none" cx="171" cy="-90" rx="27" ry="18"></ellipse>
+                </g>
+                <!-- A&#45;&gt;X -->
+                <g id="edge4" class="edge">
+                    <path fill="none" d="M171,-143.697C171,-135.983 171,-126.712 171,-118.112"></path>
+                    <polygon points="174.5,-118.104 171,-108.104 167.5,-118.104 174.5,-118.104"></polygon>
+                </g>
+                <!-- B -->
+                <g id="node7" class="node vendor">
+                    <ellipse fill="none" cx="261" cy="-90" rx="27" ry="18"></ellipse>
+                    <text text-anchor="middle" x="261" y="-85.8">A</text>
+                </g>
+                <!-- A&#45;&gt;B -->
+                <g id="edge6" class="edge">
+                    <path fill="none" d="M187.928,-147.834C201.505,-137.274 220.757,-122.3 236.092,-110.373"></path>
+                    <polygon points="238.403,-113.01 244.148,-104.107 234.105,-107.484 238.403,-113.01"></polygon>
+                </g>
+                <!-- F -->
+                <g id="node15" class="node question">
+                    <ellipse fill="none" cx="27" cy="-18" rx="27" ry="18"></ellipse>
+                </g>
+                <!-- G&#45;&gt;F -->
+                <g id="edge14" class="edge">
+                    <path fill="none" d="M84.4297,-74.8345C74.2501,-64.9376 60.4761,-51.5462 48.9694,-40.3591"></path>
+                    <polygon points="51.4055,-37.8461 41.7957,-33.3847 46.5259,-42.865 51.4055,-37.8461"></polygon>
+                </g>
+                <!-- K -->
+                <g id="node17" class="node">
+                    <ellipse fill="none" cx="99" cy="-18" rx="27" ry="18"></ellipse>
+                </g>
+                <!-- G&#45;&gt;K -->
+                <g id="edge16" class="edge">
+                    <path fill="none" d="M99,-71.6966C99,-63.9827 99,-54.7125 99,-46.1124"></path>
+                    <polygon points="102.5,-46.1043 99,-36.1043 95.5001,-46.1044 102.5,-46.1043"></polygon>
+                </g>
+                <!-- Y -->
+                <g id="node9" class="node">
+                    <ellipse fill="none" cx="171" cy="-18" rx="27" ry="18"></ellipse>
+                </g>
+                <!-- X&#45;&gt;Y -->
+                <g id="edge8" class="edge">
+                    <path fill="none" d="M171,-71.6966C171,-63.9827 171,-54.7125 171,-46.1124"></path>
+                    <polygon points="174.5,-46.1043 171,-36.1043 167.5,-46.1044 174.5,-46.1043"></polygon>
+                </g>
+                <!-- C -->
+                <g id="node11" class="node vendor">
+                    <ellipse fill="none" cx="243" cy="-18" rx="27" ry="18"></ellipse>
+                    <text text-anchor="middle" x="243" y="-13.8">B</text>
+                </g>
+                <!-- B&#45;&gt;C -->
+                <g id="edge10" class="edge">
+                    <path fill="none" d="M256.643,-72.055C254.609,-64.1446 252.139,-54.5398 249.863,-45.6879"></path>
+                    <polygon points="253.197,-44.6023 247.317,-35.789 246.418,-46.3456 253.197,-44.6023"></polygon>
+                </g>
+                <!-- D -->
+                <g id="node13" class="node vendor">
+                    <ellipse fill="none" cx="315" cy="-18" rx="27" ry="18"></ellipse>
+                    <text text-anchor="middle" x="315" y="-13.8">C</text>
+                </g>
+                <!-- B&#45;&gt;D -->
+                <g id="edge12" class="edge">
+                    <path fill="none" d="M272.984,-73.4647C279.976,-64.4021 288.936,-52.7865 296.785,-42.6119"></path>
+                    <polygon points="299.712,-44.5475 303.049,-34.4918 294.17,-40.2719 299.712,-44.5475"></polygon>
+                </g>
+                <!-- V -->
+                <g id="node18" class="node vendor">
+                    <ellipse fill="none" cx="279" cy="-162" rx="27" ry="18"></ellipse>
+                    <text text-anchor="middle" x="279" y="-157.8">vendor.js</text>
+                </g>
+                <!-- V&#45;&gt;B -->
+                <g id="edge18" class="edge">
+                    <path fill="none" d="M274.643,-144.055C272.609,-136.145 270.139,-126.54 267.863,-117.688"></path>
+                    <polygon points="271.197,-116.602 265.317,-107.789 264.418,-118.346 271.197,-116.602"></polygon>
+                </g>
+                <!-- 1 -->
+                <g id="node21" class="node vendor empty">
+                    <ellipse fill="none" cx="387" cy="-90" rx="27" ry="18"></ellipse>
+                </g>
+                <!-- V&#45;&gt;1 -->
+                <g id="edge20" class="edge">
+                    <path fill="none" d="M297.812,-148.807C315.002,-137.665 340.618,-121.062 359.993,-108.504"></path>
+                    <polygon points="361.916,-111.429 368.403,-103.053 358.108,-105.555 361.916,-111.429"></polygon>
+                </g>
+                <!-- 2 -->
+                <g id="node23" class="node vendor empty">
+                    <ellipse fill="none" cx="387" cy="-18" rx="27" ry="18"></ellipse>
+                </g>
+                <!-- 1&#45;&gt;2 -->
+                <g id="edge22" class="edge">
+                    <path fill="none" d="M387,-71.6966C387,-63.9827 387,-54.7125 387,-46.1124"></path>
+                    <polygon points="390.5,-46.1043 387,-36.1043 383.5,-46.1044 390.5,-46.1043"></polygon>
+                </g>
+                <!-- 3 -->
+                <g id="node25" class="node vendor empty">
+                    <ellipse fill="none" cx="459" cy="-18" rx="27" ry="18"></ellipse>
+                </g>
+                <!-- 1&#45;&gt;3 -->
+                <g id="edge24" class="edge">
+                    <path fill="none" d="M401.57,-74.8345C411.75,-64.9376 425.524,-51.5462 437.031,-40.3591"></path>
+                    <polygon points="439.474,-42.865 444.204,-33.3847 434.595,-37.8461 439.474,-42.865"></polygon>
+                </g>
+            </g>
+        </svg>
+    </section>
+
+    <section class="slide">
+		<figure>
+			<img class="cover" src="pictures/bundle-splitting-with-tree-shaking-vendor-map.png" alt="No optimisation">
+		</figure>
+	</section>
+
+	<section class="slide prism">
+		<h2>Bundling</h2>
+		<pre class="language-javascript">
+            <code>
+                // maths.js
+                export function <mark class="important">square(x)</mark> { return x * x; }
+                export function cube(x) { return x * x * x; }
+                
+                // main.js
+                import { cube } from './maths.js';
+                console.log(cube(5)); // 125
+            </code>
+		</pre>
+	</section>
+
+    <section class="slide prism">
+		<pre style="font-size: 22px;" class="language-javascript">
+            <code>
+                /***/ (function(module, exports, __webpack_require__) {
+                    "use strict";
+                    exports.__esModule = true;
+                    exports.square = square;
+                    exports.cube = cube;
+                    function square(x) {
+                        return x * x;
+                    }
+                    function cube(x) {
+                        return x * x * x;
+                    }
+                /***/ }),
+            </code>
+		</pre>
+	</section>
+
+    <section class="slide">
+        <h2>Tree shaking</h2>
+		<ul>
+			<li>Bundler removes <b>references</b> to dead code</li>
+			<li class="next">Minification removes dead code</li>
+			<li class="next">Webpack 2.x + ES6 (import/export)</li>
+			<li class="next">Babel</li>
+		</ul>
+    </section>
+
+    <section class="slide prism">
+        <h2>Tree Shaking - Webpack</h2>
+        <pre class="language-javascript">
+            <code>
+                test: /\.js$/,
+                exclude: /node_modules/,
+                loader: 'babel-loader',
+                options: {
+                    presets: [
+                        [ 'es2015', { <mark class="important">modules: false</mark> } ] // default CommonJS
+                    ]
                 }
+            </code>
+		</pre>
+	</section>
+
+    <section class="slide prism">
+        <pre style="font-size: 22px;" class="language-javascript">
+            <code>
+                /***/ (function(module, __webpack_exports__, __webpack_require__) {
+                    "use strict";
+                    /* unused harmony export square */
+                    /* harmony export (immutable) */ __webpack_exports__["a"] = cube;
+                    function square(x) {
+                        return x * x;
+                    }
+                    function cube(x) {
+                        return x * x * x;
+                    }
+                /***/ }),
             </code>
         </pre>
     </section>
 
     <section class="slide prism">
-        <pre style="font-size: 30px;" class="language-javascript line-numbers">
+        <h2>Bundle + Minification = Tree Shaking</h2>
+        <pre style="font-size: 22px;" class="language-javascript">
             <code>
-                var monad = wrap('cookie');
-                bind(monad, (value) => {
-                    console.info(value);
-                    return wrap(value);
-                });
-                monad = bind(monad, (value) => {
-                    return wrap({ type: value });
-                });
-                bind(monad, (value) => {
-                    console.log(value);
-                    return wrap(value);
-                });
+                function(module, __webpack_exports__, __webpack_require__) {
+                    "use strict";
+                    function cube(x) {
+                        return x * x * x;
+                    }
+                    __webpack_exports__.a = cube;
+                }
             </code>
         </pre>
     </section>
 
     <section class="slide">
-        <h2 class="shout"><a href="">Linked</a> Shout</h2>
-    </section>
+		<figure>
+			<img class="cover" src="pictures/bundle-splitting-with-tree-shaking-minify-vendor-map.png" alt="No optimisation">
+		</figure>
+	</section>
 
-    <section class="slide">
-        <h2 class="shout grow">Effect: Growing Shout</h2>
-    </section>
+    <section class="slide compact">
+        <video width="100%" preload>
+            <source src="videos/tree-shaking.webm" type="video/webm">
+        </video>
+	</section>
 
-    <section class="slide">
-        <h2 class="shout shrink">Effect: Shrinking Shout</h2>
-    </section>
-
-    <section class="slide">
-        <figure>
-            <img class="cover" src="vendors/shower-ribbon/pictures/exact.png" alt="">
-            <figcaption class="white">Copyright © 2016 <a href="">Yours Truly</a>, Famous Inc.</figcaption>
-        </figure>
-    </section>
-
-    <section class="slide">
-        <img class="cover" src="vendors/shower-ribbon/pictures/tall.png" alt="">
-    </section>
-
-    <section class="slide">
-        <img class="cover" src="vendors/shower-ribbon/pictures/wide.png" alt="">
-    </section>
-
-    <section class="slide white">
-        <img class="place top left" src="vendors/shower-ribbon/pictures/square.png" alt="">
-        <img class="place top" src="vendors/shower-ribbon/pictures/square.png" alt="">
-        <img class="place top right" src="vendors/shower-ribbon/pictures/square.png" alt="">
-
-        <img class="place left" src="vendors/shower-ribbon/pictures/square.png" alt="">
-        <img class="place" src="vendors/shower-ribbon/pictures/square.png" alt="">
-        <img class="place right" src="vendors/shower-ribbon/pictures/square.png" alt="">
-
-        <img class="place bottom left" src="vendors/shower-ribbon/pictures/square.png" alt="">
-        <img class="place bottom" src="vendors/shower-ribbon/pictures/square.png" alt="">
-        <img class="place bottom right" src="vendors/shower-ribbon/pictures/square.png" alt="">
-    </section>
-
-    <section class="slide" data-timing="00:03">
-        <h3 class="shout">Automatic switch slide after <strong>3 secs</strong> ...</h3>
-    </section>
-
+    <section class="slide middle with-img">
+		<div class="middle">
+			<p>App bundle + UglifyJs + Tree Shaking</p>
+			1.3MB => 3:25min @ 3G
+		</div>
+		<img src="pictures/smile.gif"/>
+	</section>
+    
     <section class="slide">
         <h3 class="shout">See you next month at WarsawJS</h3>
     </section>
@@ -333,7 +797,12 @@
     <script src="vendors/gamepad/gamepad.js"></script>
     <script src="vendors/shower/shower.min.js"></script>
     <script src="vendors/shower-gamepad/shower.gamepad.js"></script>
+    <script src="vendors/shower-video/shower-video.js"></script>
+    <script src="vendors/chartist/chartist.min.js"></script>
     <script src="modules/fullscreen.js"></script>
+    <script src="modules/legend.js"></script>
+	<script src="modules/createRect.js"></script>
+	<script src="modules/charts.js"></script>
 
     <!-- Prism.js -->
     <script src="vendors/prism/prism.js"></script>
