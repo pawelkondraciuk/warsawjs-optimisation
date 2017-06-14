@@ -20,11 +20,15 @@ shower.modules.define('shower-video', [
         this._shower = shower;
         this._playerListeners = null;
 
-				this._element = this._shower.container.getElement();
+        this.showerCssInit = 0;
 
-				this._setupListeners();
+        this._element = this._shower.container.getElement();
 
-				this.playEverything(this._shower.player.getCurrentSlide().layout.getElement());
+        this._setupListeners();
+
+        if(this._shower.player.getCurrentSlide()) {
+            this.playEverything(this._shower.player.getCurrentSlide().layout.getElement());
+        }
     }
 
     extend(Video.prototype, /** @lends plugin.Progress.prototype */{
@@ -72,14 +76,14 @@ shower.modules.define('shower-video', [
                 if(el && el.currentTime !== undefined) {
                     if (el.readyState !== 4) { //HAVE_ENOUGH_DATA
 
-                        if(showerCssInit === 0) {
+                        if(this.showerCssInit === 0) {
                             //TODO: add loader
                             //TODO: on first page visit with video, add play button
 
                             //initing video after first Shower CSS init, to avoid CPU load bottleneck
                             setTimeout(function(){
                                 //TODO: move this init to Full mode check
-                                showerCssInit = 1;
+                                this.showerCssInit = 1;
 
                                 el.parentNode.style.display = 'block';
 
