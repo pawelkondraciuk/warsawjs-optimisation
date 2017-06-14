@@ -177,3 +177,7 @@ svg g.empty ellipse {
 svg g.question ellipse {
   fill: #FFE658;
 }
+
+.slide.prism pre[class*="language-"] {
+  overflow: hidden;
+}
