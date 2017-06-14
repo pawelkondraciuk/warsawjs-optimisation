@@ -863,17 +863,11 @@
 	</section>
 
     <section class="slide">
-		<figure>
-			<img class="cover" src="pictures/compiler-map.png" alt="Compiler map">
-		</figure>
-	</section>
-
-    <section class="slide">
         <h2>@angular/compiler</h2>
         <ul>
             <li class="next">Transforms HTML into JavaScript optimized for VM</li>
             <li class="next">Creates scoped CSS based on the ViewEncapsulation</li>
-            <li class="next">Generates metadata for third party libraries</li>
+            <li class="next">Generates metadata</li>
             <li class="next">Every time app is loaded (JIT)</li>
         </ul>
     </section>
@@ -890,9 +884,15 @@
     </section>
 
     <section class="slide">
+		<figure>
+			<img class="cover" src="pictures/compiler-map.png" alt="Compiler map">
+		</figure>
+	</section>
+
+    <section class="slide">
         <h2>@angular/compiler</h2>
         <ul>
-            <li>HTML can be compiled to TypeScript</li>
+            <li>HTML can be compiled to TypeScript or JavaScript</li>
             <li class="next">...so your JS code in HTML needs to be valid</li>
             <li class="next">...and it have to be <a href="https://medium.com/@isaacplmann/making-your-angular-2-library-statically-analyzable-for-aot-e1c6f3ebedd5">statically analyzable</a>.</li>
         </ul>
@@ -973,7 +973,7 @@
 	</section>
 
     <section class="slide">
-        Who needs all modules at once?
+        <h2>Who needs all modules at once?</h2>
     </section>
 
     <section class="slide">
@@ -1106,16 +1106,16 @@
     </section>
 
     <section class="slide">
-        <h3 class="shout">Questions?</h3>
+		<img src="pictures/questions.gif" class="full-height" />
         <p class="contact-note"><a href="http://twitter.com/pawelkondraciuk">@pawelkondraciuk</a></p>
         <style>
             p.contact-note {
                 position: absolute;
-                bottom: 40px;
+                bottom: 0px;
                 right: 100px;
             }
         </style>
-    </section>
+	</section>
 
     <section class="slide">
         <h3 class="shout">See you next month at WarsawJS</h3>
