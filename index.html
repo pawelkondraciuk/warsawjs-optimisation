@@ -237,10 +237,10 @@
     <section class="slide">
 		<h2>Closure*</h2>
 		<ul>
-			<li class="next">Aggressive obtimalisation</li>
+			<li class="next">Aggressive optimisation</li>
 			<li class="next">Dead code eleminiation</li>
 			<li class="next">You need to think about Closure during coding</li>
-			<li class="next">Easy do make mistakes</li>
+			<li class="next">It's easy to mak a mistake</li>
 		</ul>
 		<p class="note next">* UglifyJS is more than enough on a daily basis</p>
 	</section>
@@ -777,7 +777,7 @@
     <section class="slide">
         <h2>Tree shaking</h2>
 		<ul>
-			<li>Bundler removes <b>references</b> to unused exports</li>
+			<li class="next">Bundler emits only used exports to the bundle</li>
 			<li class="next">Minifier removes dead code</li>
 			<li class="next">Webpack 2.x + ES6 (import/export)</li>
 			<li class="next">Babel + es2015 preset</li>
@@ -793,7 +793,7 @@
                 loader: 'babel-loader',
                 options: {
                     presets: [
-                        [ 'es2015', { <mark class="important">modules: false</mark> } ] // default CommonJS
+                        [ 'es2015', { modules: false } ] // default CommonJS
                     ]
                 }
             </code>
@@ -833,12 +833,6 @@
         </pre>
     </section>
 
-    <section class="slide">
-		<figure>
-			<img class="cover" src="pictures/bundle-splitting-with-tree-shaking-minify-vendor-map.png" alt="No optimisation">
-		</figure>
-	</section>
-
     <section class="slide middle with-img">
 		<div class="middle">
 			<p>App bundle + UglifyJs + Tree Shaking</p>
@@ -847,10 +841,20 @@
 		<img src="pictures/smile.gif"/>
 	</section>
 
+    <section class="slide">
+		<figure>
+			<img class="cover" src="pictures/bundle-splitting-with-tree-shaking-minify-vendor-map.png" alt="No optimisation">
+		</figure>
+	</section>
+
     <section class="slide compact">
         <video width="100%" preload>
             <source src="videos/tree-shaking.webm" type="video/webm">
         </video>
+	</section>
+
+    <section class="slide">
+		<img src="pictures/why.gif" class="full-height" />
 	</section>
 
     <section class="slide">
@@ -868,30 +872,30 @@
     <section class="slide">
         <h2>@angular/compiler</h2>
         <ul>
-            <li>Transforms HTML into JavaScript optimized for VM</li>
-            <li>Creates scoped CSS based on the ViewEncapsulation</li>
-            <li>Generates metadata for third party libraries</li>
-            <li>Every time app is loaded (JIT)</li>
+            <li class="next">Transforms HTML into JavaScript optimized for VM</li>
+            <li class="next">Creates scoped CSS based on the ViewEncapsulation</li>
+            <li class="next">Generates metadata for third party libraries</li>
+            <li class="next">Every time app is loaded (JIT)</li>
         </ul>
     </section>
 
     <section class="slide">
         <h2>Ahead of Time compilation</h2>
         <ul>
-            <li>Smaller application size (no @angular/compiler)</li>
-            <li>Faster rendering (templates already compiled)</li>
-            <li>Detect template errors earlier (at build time)</li>
-            <li>Better security (no evals)</li>
-            <li>Even smaller bundle size with tree shaking!</li>
+            <li class="next">Smaller application size (no @angular/compiler)</li>
+            <li class="next">Faster rendering (templates already compiled)</li>
+            <li class="next">Detect template errors earlier (at build time)</li>
+            <li class="next">Better security (no evals)</li>
+            <li class="next">Even smaller bundle size with tree shaking!</li>
         </ul>
     </section>
 
     <section class="slide">
         <h2>@angular/compiler</h2>
         <ul>
-            <li>HTML can be compiled to TypeScript</li>
-            <li>...so your JS code in HTML needs to be valid</li>
-            <li>...and it have to be <a href="https://medium.com/@isaacplmann/making-your-angular-2-library-statically-analyzable-for-aot-e1c6f3ebedd5">statically analyzable</a>.</li>
+            <li class="next">HTML can be compiled to TypeScript</li>
+            <li class="next">...so your JS code in HTML needs to be valid</li>
+            <li class="next">...and it have to be <a href="https://medium.com/@isaacplmann/making-your-angular-2-library-statically-analyzable-for-aot-e1c6f3ebedd5">statically analyzable</a>.</li>
         </ul>
     </section>
 
@@ -917,10 +921,10 @@
     <section class="slide">
         <h2>@ngtools/webpack</h2>
         <ul>
-            <li>replaces awesome-typescript-loader + ng-router-loader + angular2-template-loader</li>
-            <li>and adds AoT compilation</li>
-            <li>can be used with scss, less, pug</li>
-            <li>part of the Angular CLI</li>
+            <li class="next">Replaces awesome-typescript-loader + ng-router-loader + angular2-template-loader</li>
+            <li class="next">...and adds AoT compilation</li>
+            <li class="next">Can be used with SCSS, LESS, PUG</li>
+            <li class="next">It's part of the Angular CLI</li>
         </ul>
     </section>
 
@@ -964,7 +968,7 @@
     <section class="slide middle with-img">
 		<div class="middle">
 			<p>Angular + UglifyJs + Tree Shaking + AoT</p>
-			427KB => 1:05min @ 3G
+			792KB => 2:02min @ 3G
 		</div>
 		<img src="pictures/thumbup.gif" />
 	</section>
