@@ -58,8 +58,7 @@
         <style>
             .instapage {
                 height: 40px;
-                vertical-align: middle;
-                margin-top: -50px;
+                margin-bottom: 50px;
                 margin-left: 50px;
             }
             .bialystok {
@@ -240,7 +239,7 @@
 			<li class="next">Aggressive optimisation</li>
 			<li class="next">Dead code eleminiation</li>
 			<li class="next">You need to think about Closure during coding</li>
-			<li class="next">It's easy to mak a mistake</li>
+			<li class="next">It's easy to make a mistake</li>
 		</ul>
 		<p class="note next">* UglifyJS is more than enough on a daily basis</p>
 	</section>
@@ -833,18 +832,18 @@
         </pre>
     </section>
 
+    <section class="slide">
+		<figure>
+			<img class="cover" src="pictures/bundle-splitting-with-tree-shaking-minify-vendor-map.png" alt="No optimisation">
+		</figure>
+	</section>
+
     <section class="slide middle with-img">
 		<div class="middle">
 			<p>App bundle + UglifyJs + Tree Shaking</p>
 			1.1MB => 2:54min @ 3G
 		</div>
 		<img src="pictures/smile.gif"/>
-	</section>
-
-    <section class="slide">
-		<figure>
-			<img class="cover" src="pictures/bundle-splitting-with-tree-shaking-minify-vendor-map.png" alt="No optimisation">
-		</figure>
 	</section>
 
     <section class="slide compact">
@@ -893,7 +892,7 @@
     <section class="slide">
         <h2>@angular/compiler</h2>
         <ul>
-            <li class="next">HTML can be compiled to TypeScript</li>
+            <li>HTML can be compiled to TypeScript</li>
             <li class="next">...so your JS code in HTML needs to be valid</li>
             <li class="next">...and it have to be <a href="https://medium.com/@isaacplmann/making-your-angular-2-library-statically-analyzable-for-aot-e1c6f3ebedd5">statically analyzable</a>.</li>
         </ul>
@@ -921,7 +920,7 @@
     <section class="slide">
         <h2>@ngtools/webpack</h2>
         <ul>
-            <li class="next">Replaces awesome-typescript-loader + ng-router-loader + angular2-template-loader</li>
+            <li>Replaces awesome-typescript-loader + ng-router-loader + angular2-template-loader</li>
             <li class="next">...and adds AoT compilation</li>
             <li class="next">Can be used with SCSS, LESS, PUG</li>
             <li class="next">It's part of the Angular CLI</li>
@@ -974,14 +973,23 @@
 	</section>
 
     <section class="slide">
+        Who needs all modules at once?
+    </section>
+
+    <section class="slide">
         <h2>Lazy loading</h2>
         <ul>
-			<li class="next">Who needs all modules at once?</li>
             <li class="next">Only required code is delivered in app.js</li>
             <li class="next">Rest is splitted into chunks and fetched on demand</li>
 			<li class="next">Fast time to interact</li>
 		</ul>
     </section>
+
+    <section class="slide compact">
+		<video width="100%" preload>
+            <source src="videos/lazy-load-1.webm" type="video/webm">
+        </video>
+	</section>
 
     <section class="slide prism">
 		<h2>Lazy loading</h2>
@@ -996,12 +1004,6 @@
                 ];
             </code>
 		</pre>
-	</section>
-
-    <section class="slide compact">
-		<video width="100%" preload>
-            <source src="videos/lazy-load-1.webm" type="video/webm">
-        </video>
 	</section>
 
     <section class="slide compact">
